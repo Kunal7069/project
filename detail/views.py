@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from rest_framework import status
 from django.shortcuts import render
-from model.models import *
 import requests
 from rest_framework.generics import ListAPIView
 # Create your views here.
