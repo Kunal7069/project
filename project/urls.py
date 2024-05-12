@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from detail import views
+from detail.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
-    path('details/',views.detail),
-    path('save/',views.save),
+    path('nutrition_api/',NutritionEstimateView.as_view(),name="nutrition_estimate"),
+    path('quantity_api/',QuantityEstimateView.as_view(),name="quantity_estimate"),
+    path('recipe_api/',NutrientsWiseRecipeView.as_view(),name="recipe_estimate"),
+    path('integrients_recipe_api/',IndigreintsWiseRecipeView.as_view(),name="integrients_recipe_api/"),
+    path('bmi_estimate_api/',BMIEstimateView.as_view(),name="bmi_estimate"),
+    
 ]
